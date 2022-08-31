@@ -1,0 +1,11 @@
+.select-box{
+      
+      background-color: white;
+  
+      height: 4em;
+      outline: none;
+      border-radius: 4px;
+      padding: .8em 1em;
+      /* margin-bottom: em; */
+}
+

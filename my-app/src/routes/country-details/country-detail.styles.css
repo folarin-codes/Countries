@@ -1,0 +1,16 @@
+.country-detail-container{
+      padding: 0 2em;
+      display: flex;
+      flex-direction: column;
+      gap: 2em;
+      height : 100vh
+}
+.country-detail-container > div{
+      display: flex;
+      flex-direction: column;
+      gap: 2em;
+}
+
+.country-detail-container button{
+      display: inline;
+}
