@@ -2,14 +2,16 @@ import { useState, useEffect, createContext } from 'react';
 
 export const countryContext = createContext({
       countries: [],
+      loaderIndicator: true,
       setThemeSwitch: ()=> null,
-      themeSwitch : false
+      themeSwitch: false,
 })
 
 const CountryContext = ({ children }) => {
 
       const [countries, setCountries] = useState([])
-      const [themeSwitch , setThemeSwitch] = useState(false)
+      const [themeSwitch, setThemeSwitch] = useState(false)
+      const [loaderIndicator , setLoaderIndicator] = useState(true)
 
       
 const fetchCountries = async () => {
@@ -20,11 +22,14 @@ const fetchCountries = async () => {
             const countriesArr = await res.json();
 
             setCountries(countriesArr)
+           
+
             console.log(countriesArr)
             
       }
       catch (e) {
             alert(e)
+            setLoaderIndicator(false)
             
       }
 
@@ -35,7 +40,7 @@ const fetchCountries = async () => {
             fetchCountries()
       }, [])
 
-      const value = {countries , themeSwitch , setThemeSwitch}
+      const value = {countries , themeSwitch , setThemeSwitch ,  loaderIndicator}
       
       return (
             <countryContext.Provider value={value}>

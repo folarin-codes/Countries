@@ -1,5 +1,5 @@
 .country-detail-container{
-      padding: 0 2em;
+      padding: 0 5vw;
       display: flex;
       flex-direction: column;
       gap: 2em;
@@ -13,4 +13,41 @@
 
 .country-detail-container button{
       display: inline;
+      padding: .1em 1.2em;
+      outline: none;
+      border: 1px solid rgb(58, 58, 58);
+      border-radius: 4px;
+}
+
+
+
+@media (min-width: 1024px) {
+     
+      .container-primary span{
+            display: block;
+           margin-top: 2.5em;
+
+      }
+
+      .country-detail-container > div{
+            display: grid;
+            grid-template-columns: repeat(3 , 1fr);
+            row-gap: 2em;
+            margin-top: 3vw;
+          
+      }
+
+       .country-detail-container  h2{ 
+            margin-bottom: 1em;
+           
+      }
+      .country-detail-container img{
+            height: 15em;
+            width: 40em;
+      }
+
+      .container-primary div{
+            padding-left: 3em;
+      }
+      
 }

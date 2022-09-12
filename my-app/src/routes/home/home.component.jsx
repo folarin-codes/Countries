@@ -19,7 +19,7 @@ const Home = () => {
       return (
            
             
-        <div style={{backgroundColor: themeSwitch ? 'hsl(207, 26%, 17%)' : 'hsl(0, 0%, 98%)' , maxHeight:'100%' }}>
+        <div className='back-container' style={{backgroundColor: themeSwitch ? 'hsl(207, 26%, 17%)' : 'hsl(0, 0%, 98%)'  }}>
            
                   
           <div className="country-container">

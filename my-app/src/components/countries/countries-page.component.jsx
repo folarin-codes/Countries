@@ -18,9 +18,8 @@ const CountriesPage = () => {
     
       const countriesData = useContext(countryContext) 
 
-      const { countries } = countriesData
-
-    
+      const { countries, loaderIndicator } = countriesData
+          
 
       const [countryName, setCountryName] = useState('')
       const [region , setRegion] = useState('')
@@ -47,11 +46,7 @@ const CountriesPage = () => {
             else if (country.region.toLowerCase() == region.toLowerCase()) {
                   return country.region.toLowerCase() == region.toLowerCase()
             }
-            // else {
-            //       return true;
-
-            // }
-                 
+          
             
       })
 
@@ -65,7 +60,7 @@ const CountriesPage = () => {
       return (
             <div className="container">
                   
-                  <div>
+                  <div style={{marginBottom: '2em'}}>
                         
                      <SearchBox onChange={onSearchChange}/>
 
@@ -73,9 +68,12 @@ const CountriesPage = () => {
 
                   </div>
 
-                  {
-                      countries ?  newFilteredCountries?.map((countryDetails) => {
-                              {/* console.log(countryDetails.name.toLowerCase()) */}
+                  <div className="country-component-container">
+                        
+                        {
+                              countries[0] ?
+                                    newFilteredCountries?.map((countryDetails) => {
+                              
                               return (
                                     <Link to={countryDetails.name.toLowerCase()} key={countryDetails.name}  >
                                           
@@ -84,8 +82,12 @@ const CountriesPage = () => {
                                     </Link>
                               )
                               
-                        }) :  <div>Countries are loading...</div>
-                 }
+                        }) : <span className="loader" style={{display: loaderIndicator ? 'block' : 'none'}}></span>
+                                          
+                        } 
+                        
+                  </div>
+                  
             </div>
       )
 }

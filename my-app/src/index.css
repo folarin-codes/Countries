@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+ 
 
  
 }
@@ -13,9 +14,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-#root , html{
-  /* background-color:   hsl(0, 0%, 98%); */
-  height: inherit;
+#root , html, body,.back-container{
+ 
 }
 h2{
   font-weight: bold !important;

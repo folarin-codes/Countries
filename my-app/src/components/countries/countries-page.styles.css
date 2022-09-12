@@ -1,4 +1,75 @@
-.container{
+.country-component-container{
       display: grid;
       gap: 4em;
+
+}
+
+.loader {
+      position: relative;
+     
+      margin: 0 auto;
+      width: 48px;
+      height: 48px;
+      border: 5px solid #FFF;
+      border-bottom-color: #19e4d3;
+      border-radius: 50%;
+      display: inline-block;
+      box-sizing: border-box;
+      -webkit-animation: rotation 1s linear infinite;
+              animation: rotation 1s linear infinite;
+      }
+  
+      @-webkit-keyframes rotation {
+      0% {
+          transform: rotate(0deg);
+      }
+      100% {
+          transform: rotate(360deg);
+      }
+      }
+  
+      @keyframes rotation {
+      0% {
+          transform: rotate(0deg);
+      }
+      100% {
+          transform: rotate(360deg);
+      }
+      } 
+
+@media (min-width : 769px){
+      .country-component-container{
+            grid-template-columns: repeat(2 , 1fr);
+            -moz-column-gap: 2em;
+                 column-gap: 2em;
+            row-gap: 3em;
+      }
+
+
+}
+
+@media (min-width: 1024px) {
+
+      .country-component-container{
+            grid-template-columns: repeat(3 , 1fr);
+            -moz-column-gap: 2em;
+                 column-gap: 2em;
+            row-gap: 3em;
+      }
+      .loader{
+            position: relative;
+            left: 100%;
+      }
+      
+}
+
+@media (min-width: 1280px) {
+
+      .country-component-container{
+            grid-template-columns: repeat(4 , 1fr);
+            -moz-column-gap: 2em;
+                 column-gap: 2em;
+            row-gap: 3em;
+      }
+      
 }
